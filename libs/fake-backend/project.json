@@ -1,8 +1,8 @@
 {
-  "name": "content-a",
+  "name": "fake-backend",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/content-a/src",
+  "sourceRoot": "libs/fake-backend/src",
   "prefix": "stackblitz-nx-angular",
   "targets": {
     "test": {
@@ -11,7 +11,7 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "libs/content-a/jest.config.ts",
+        "jestConfig": "libs/fake-backend/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -28,8 +28,8 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "libs/content-a/**/*.ts",
-          "libs/content-a/**/*.html"
+          "libs/fake-backend/**/*.ts",
+          "libs/fake-backend/**/*.html"
         ]
       }
     }

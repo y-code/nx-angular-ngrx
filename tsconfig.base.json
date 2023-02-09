@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@stackblitz-nx-angular/content-a": ["libs/content-a/src/index.ts"]
+      "@stackblitz-nx-angular/content-a": ["libs/content-a/src/index.ts"],
+      "@stackblitz-nx-angular/fake-backend": ["libs/fake-backend/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
