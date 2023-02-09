@@ -1,0 +1,62 @@
+<header>
+  <h1>Nx Angular</h1>
+</header>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer mode="side" [opened]="initiallyDrawerOpened">
+    <ul class="nav">
+      <li *ngFor="let nav of navItems">
+        <button
+          type="button"
+          mat-button
+          matTooltip="{{ nav.label }}"
+          matTooltipPosition="right"
+          [routerLink]="nav.routerLink"
+          (click)="onNavigate()"
+        >
+          <mat-icon>{{ nav.icon }}</mat-icon>
+          <span class="nav-label">{{ nav.label }}</span>
+        </button>
+      </li>
+      <li class="separator"></li>
+      <li>
+        <button
+          *ngIf="!isDesktop"
+          type="button"
+          class="close"
+          mat-button
+          (click)="toggleMenu()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <div class="main-bottom-anchor">
+      <div class="main-left-anchor">
+        <div class="toolbox">
+          <div>
+            <button
+              *ngIf="!isDesktop"
+              type="button"
+              mat-mini-fab
+              (click)="toggleMenu()"
+            >
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<div class="main-bottom-anchor"></div>
+
+<footer>(c) y-code</footer>
