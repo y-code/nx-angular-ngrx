@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+@use './mixin.scss' as mp;
+
+@import 'material-icons/iconfont/material-icons.scss';
+
+@include mat.core();
+
+// Browser Normalization //////
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+///////////////////////////////

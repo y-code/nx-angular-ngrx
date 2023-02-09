@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "content-a": "libs/content-a",
+    "shell": "apps/shell",
+    "shell-e2e": "apps/shell-e2e"
+  },
+  "defaultProject": "my-app"
+}
