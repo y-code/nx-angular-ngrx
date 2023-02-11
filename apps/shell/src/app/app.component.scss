@@ -139,15 +139,15 @@ ul.nav {
   overflow: auto;
 
   main {
-    min-width: 960px;
+    max-width: 960px;
     margin: auto;
-
+  
     @include mp.respond(tablet) {
-      min-width: 720px;
+      max-width: 720px;
     }
-
+  
     @include mp.respond(phone) {
-      min-width: 240px;
+      max-width: 540px;
     }
   }
 }
