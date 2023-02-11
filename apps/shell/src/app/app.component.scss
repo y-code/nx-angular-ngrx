@@ -134,17 +134,20 @@ ul.nav {
   }
 }
 
-main {
+.main-container {
   flex-grow: 1;
   overflow: auto;
-  min-width: 960px;
-  margin: auto;
 
-  @include mp.respond(tablet) {
-    min-width: 720px;
-  }
+  main {
+    min-width: 960px;
+    margin: auto;
 
-  @include mp.respond(phone) {
-    min-width: 540px;
+    @include mp.respond(tablet) {
+      min-width: 720px;
+    }
+
+    @include mp.respond(phone) {
+      min-width: 240px;
+    }
   }
 }

@@ -14,19 +14,11 @@
         "outputPath": "dist/apps/shell",
         "index": "apps/shell/src/index.html",
         "main": "apps/shell/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/shell/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/shell/src/favicon.ico",
-          "apps/shell/src/assets"
-        ],
-        "styles": [
-          "apps/shell/src/styles.scss",
-          "@angular/material/prebuilt-themes/deeppurple-amber.css"
-        ],
+        "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
+        "styles": ["apps/shell/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
