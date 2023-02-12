@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+  <mat-form-field *ngFor="let filter of filterSet?.filters">
+    <mat-label>{{filter.caption}}</mat-label>
+
+    <input *ngIf="filter.type === 'text'"
+      matInput type="text"
+      [formControlName]="filter.name"
+    />
+
+    <mat-select *ngIf="filter.type === 'select'"
+      [formControlName]="filter.name"
+      [multiple]="filter.options?.multiple"
+    >
+      <mat-option *ngFor="let option of (filter.api?.value | as: [])"
+        [value]="option"
+      >
+        {{option}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+</form>

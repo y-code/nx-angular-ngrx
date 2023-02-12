@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { createAction, props } from '@ngrx/store';
 import { ContentAModel, DataQuery } from './content-a-store.models';
 
@@ -13,5 +14,5 @@ export const loadContentASuccess = createAction(
 
 export const loadContentAFailure = createAction(
   '[ContentAStore] Load Content A Failure',
-  props<{ error: any }>()
+  props<{ error: HttpErrorResponse }>()
 );

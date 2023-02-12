@@ -9,4 +9,8 @@ export interface Loadable<TData> {
 export interface ContentAModel {
   id: string;
   summary: string;
+  category: ContentACategory;
+  tags: string[];
 }
+
+export type ContentACategory = 'sport' | 'music' | 'videoGame';

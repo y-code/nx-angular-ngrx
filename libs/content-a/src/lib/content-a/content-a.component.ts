@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { filter, first, merge, Subscription, tap } from 'rxjs';
 import { loadContentA } from '../content-a-store/content-a-store.actions';
 import { ContentAModel } from '../content-a-store/content-a-store.models';
+import { contentAStoreFeatureKey } from '../content-a-store/content-a-store.reducer';
 import { selectContentAStoreData } from '../content-a-store/content-a-store.selectors';
 
 @Component({
@@ -11,9 +12,11 @@ import { selectContentAStoreData } from '../content-a-store/content-a-store.sele
   styleUrls: ['./content-a.component.scss'],
 })
 export class ContentAComponent implements OnInit, OnDestroy {
+  readonly featureKey = contentAStoreFeatureKey;
+
   private subscription?: Subscription;
   data: ContentAModel[] = [];
-  displayedColumns = ['id', 'summary'];
+  displayedColumns = ['summary', 'properties'];
 
   constructor(private readonly store: Store) {}
 

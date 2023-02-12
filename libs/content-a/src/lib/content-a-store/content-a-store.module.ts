@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import * as fromContentAStore from './content-a-store.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { ContentAStoreEffects } from './content-a-store.effects';
+import { contentAStoreFeatureKey, contentAStoreReducer } from './content-a-store.reducer';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature(
-      fromContentAStore.contentAStoreFeatureKey,
-      fromContentAStore.reducer
-    ),
+    StoreModule.forFeature(contentAStoreFeatureKey, contentAStoreReducer),
     EffectsModule.forFeature([ContentAStoreEffects]),
   ],
   exports: [StoreModule, EffectsModule],

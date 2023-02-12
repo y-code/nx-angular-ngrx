@@ -9,5 +9,10 @@ export const selectContentAStoreState =
 
 export const selectContentAStoreData = createSelector(
   selectContentAStoreState,
-  (x) => x.data
+  (x) => x.data?.data
+);
+
+export const selectContentAStoreFilterSet = createSelector(
+  selectContentAStoreState,
+  (x) => x.filterSet?.data
 );

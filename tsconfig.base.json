@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@stackblitz-nx-angular/content-a": ["libs/content-a/src/index.ts"],
+      "@stackblitz-nx-angular/data-filter": ["libs/data-filter/src/index.ts"],
       "@stackblitz-nx-angular/fake-backend": ["libs/fake-backend/src/index.ts"]
     }
   },

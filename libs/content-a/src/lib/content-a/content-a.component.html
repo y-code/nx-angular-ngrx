@@ -1,13 +1,36 @@
 <h2>Content A</h2>
 
+<stackblitz-nx-angular-data-filter [featureKey]="featureKey"></stackblitz-nx-angular-data-filter>
+
 <table mat-table [dataSource]="data">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
     <td mat-cell *matCellDef="let element">{{ element.id }}</td>
   </ng-container>
+
   <ng-container matColumnDef="summary">
     <th mat-header-cell *matHeaderCellDef>Summary</th>
     <td mat-cell *matCellDef="let element">{{ element.summary }}</td>
+  </ng-container>
+  
+  <ng-container matColumnDef="properties">
+    <th mat-header-cell *matHeaderCellDef>Properties</th>
+    <td mat-cell *matCellDef="let element">
+      <table>
+        <tr>
+          <th class="mat-mdc-header-cell">Category:</th>
+          <td>{{ element.category }}</td>
+        </tr>
+        <tr>
+          <th class="mat-mdc-header-cell">Tags:</th>
+          <td>
+            <mat-chip-listbox>
+              <mat-chip *ngFor="let tag of element.tags" color="primary" highlighted>{{tag}}</mat-chip>
+            </mat-chip-listbox>
+          </td>
+        </tr>
+      </table>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

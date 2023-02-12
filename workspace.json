@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "content-a": "libs/content-a",
+    "data-filter": "libs/data-filter",
     "fake-backend": "libs/fake-backend",
     "shell": "apps/shell",
     "shell-e2e": "apps/shell-e2e"

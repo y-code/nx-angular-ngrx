@@ -1,28 +1,41 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { Action, combineReducers, createReducer, on } from '@ngrx/store';
 import * as actions from './content-a-store.actions';
 import { ContentAModel, Loadable } from './content-a-store.models';
+import { DataFilterStoreState, createDataFilterStoreReducer, initialDataFilterStoreState } from '@stackblitz-nx-angular/data-filter'
 
-export const contentAStoreFeatureKey = 'contentAStore';
+export const contentAStoreFeatureKey = 'contentA';
 
-export type ContentAStoreState = Loadable<ContentAModel[]>;
+export type ContentADataState = Loadable<ContentAModel[]>;
 
-export const initialState: ContentAStoreState = {};
+export interface ContentAStoreState {
+  data: ContentADataState,
+  filterSet: DataFilterStoreState
+}
 
-export const reducer = createReducer(
-  initialState,
+export const initialState: ContentAStoreState = {
+  data: {},
+  filterSet: initialDataFilterStoreState,
+};
 
-  on(actions.loadContentA, (state) => ({
-    ...state,
-    isLoading: true,
-    data: undefined,
-  })),
-  on(actions.loadContentASuccess, (state, { data }) => ({
-    ...state,
-    isLoading: false,
-    data,
-  })),
-  on(actions.loadContentAFailure, (state, { error }) => ({
-    ...state,
-    error,
-  }))
-);
+export const contentAStoreReducer = combineReducers({
+
+  data: createReducer<ContentADataState>(
+    initialState.data,
+    on(actions.loadContentA, (state) => ({
+      ...state,
+      isLoading: true,
+      data: undefined,
+    })),
+    on(actions.loadContentASuccess, (state, { data }) => ({
+      ...state,
+      isLoading: false,
+      data,
+    })),
+    on(actions.loadContentAFailure, (state, { error }) => ({
+      ...state,
+      error,
+    }))
+  ),
+  
+  filterSet: createDataFilterStoreReducer(contentAStoreFeatureKey),
+});
